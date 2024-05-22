@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Create Product {% endblock %}
+
+
+{% block content %}
+<div class="row mt-3 justify-content-center align-items-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5>New Product <a href="{% url 'products' %}" class="btn btn-secondary">Back</a></h5>
+                <form action="{% url 'product-create' %}" method="POST" >
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" name="add-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="add-description" id="add-description" class="form-control">
+        
+                        </textarea>
+                        <!-- <input type="text" class="form-control" name="add-name"> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="">Price</label>
+                        <input type="number" class="form-control" name="add-price" id="add-price" min="1" step="any">
+                    </div>
+        
+                    <button class="btn btn-success mt-3">Submit</button>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock %}

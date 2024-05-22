@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Detail Product {% endblock %}
+
+{% block content %}
+
+    <div class="row justify-content-center align-items-center mt-3">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">{{product_detail.name}}</h5>
+                </div>
+                <div class="card-body">
+                    <p>{{product_detail.description}}</p>
+                    <p>{{product_detail.price}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'products' %}" class="btn btn-secondary">Back</a>
+                    <a href="#" class="btn btn-danger ">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
